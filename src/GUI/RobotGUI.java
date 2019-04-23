@@ -4,7 +4,6 @@ import java.awt.AWTException;
 import java.awt.Color;
 import java.awt.Robot;
 import java.awt.Toolkit;
-import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.FlavorEvent;
 import java.awt.datatransfer.FlavorListener;
@@ -13,9 +12,10 @@ import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
-import javax.swing.GroupLayout.Alignment;
+
 import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JOptionPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 /**
@@ -24,7 +24,11 @@ import javax.swing.LayoutStyle.ComponentPlacement;
  */
 public class RobotGUI extends javax.swing.JFrame {
     
-    Robot robot;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	Robot robot;
     int status;
     boolean goodToGo = false;
 
@@ -65,11 +69,11 @@ public class RobotGUI extends javax.swing.JFrame {
         status = 0;
         int count = 0;
         int delay = Integer.parseInt(jFormattedTextField1.getText());
-        updateStatus("Iniciando digitação...");
+        updateStatus("Iniciando digitaï¿½ï¿½o...");
         jProgressBar1.setMaximum(keys.length());
         for (char c : keys.toCharArray()) {
             if (!goodToGo) {
-                updateStatus("Operação Cancelada pelo usuário.");
+                updateStatus("Operaï¿½ï¿½o Cancelada pelo usuï¿½rio.");
                 break;
             }
             int keyCode = KeyEvent.getExtendedKeyCodeForChar(c);
@@ -100,52 +104,52 @@ public class RobotGUI extends javax.swing.JFrame {
                     robot.delay(delay);
                     robot.keyRelease(KeyEvent.VK_ALT);
                     robot.delay(delay);
-                } else if ((Character.toString(c).toLowerCase()).equals("ã")) {
+                } else if ((Character.toString(c).toLowerCase()).equals("ï¿½")) {
                     robot.keyPress(KeyEvent.VK_A);
                     robot.delay(delay);
                     robot.keyRelease(KeyEvent.VK_A);
                     robot.delay(delay);
-                } else if ((Character.toString(c).toLowerCase()).equals("à")) {
+                } else if ((Character.toString(c).toLowerCase()).equals("ï¿½")) {
                     robot.keyPress(KeyEvent.VK_A);
                     robot.delay(delay);
                     robot.keyRelease(KeyEvent.VK_A);
                     robot.delay(delay);
-                } else if ((Character.toString(c).toLowerCase()).equals("á")) {
+                } else if ((Character.toString(c).toLowerCase()).equals("ï¿½")) {
                     robot.keyPress(KeyEvent.VK_A);
                     robot.delay(delay);
                     robot.keyRelease(KeyEvent.VK_A);
                     robot.delay(delay);
-                } else if ((Character.toString(c).toLowerCase()).equals("â")) {
+                } else if ((Character.toString(c).toLowerCase()).equals("ï¿½")) {
                     robot.keyPress(KeyEvent.VK_A);
                     robot.delay(delay);
                     robot.keyRelease(KeyEvent.VK_A);
                     robot.delay(delay);
-                } else if ((Character.toString(c).toLowerCase()).equals("é")) {
+                } else if ((Character.toString(c).toLowerCase()).equals("ï¿½")) {
                     robot.keyPress(KeyEvent.VK_E);
                     robot.delay(delay);
                     robot.keyRelease(KeyEvent.VK_E);
                     robot.delay(delay);
-                } else if ((Character.toString(c).toLowerCase()).equals("ê")) {
+                } else if ((Character.toString(c).toLowerCase()).equals("ï¿½")) {
                     robot.keyPress(KeyEvent.VK_E);
                     robot.delay(delay);
                     robot.keyRelease(KeyEvent.VK_E);
                     robot.delay(delay);
-                } else if ((Character.toString(c).toLowerCase()).equals("í")) {
+                } else if ((Character.toString(c).toLowerCase()).equals("ï¿½")) {
                     robot.keyPress(KeyEvent.VK_I);
                     robot.delay(delay);
                     robot.keyRelease(KeyEvent.VK_I);
                     robot.delay(delay);
-                } else if ((Character.toString(c).toLowerCase()).equals("õ")) {
+                } else if ((Character.toString(c).toLowerCase()).equals("ï¿½")) {
                     robot.keyPress(KeyEvent.VK_O);
                     robot.delay(delay);
                     robot.keyRelease(KeyEvent.VK_O);
                     robot.delay(delay);
-                } else if ((Character.toString(c).toLowerCase()).equals("ó")) {
+                } else if ((Character.toString(c).toLowerCase()).equals("ï¿½")) {
                     robot.keyPress(KeyEvent.VK_O);
                     robot.delay(delay);
                     robot.keyRelease(KeyEvent.VK_O);
                     robot.delay(delay);
-                } else if ((Character.toString(c).toLowerCase()).equals("ú")) {
+                } else if ((Character.toString(c).toLowerCase()).equals("ï¿½")) {
                     robot.keyPress(KeyEvent.VK_U);
                     robot.delay(delay);
                     robot.keyRelease(KeyEvent.VK_U);
@@ -379,6 +383,34 @@ public class RobotGUI extends javax.swing.JFrame {
                             robot.keyRelease(KeyEvent.VK_ALT);
                             robot.delay(delay);
                             break;
+                        case 16777340:
+                        	robot.keyPress(KeyEvent.VK_ALT);
+                            robot.delay(delay);
+                            robot.keyPress(KeyEvent.VK_NUMPAD1);
+                            robot.delay(delay);
+                            robot.keyRelease(KeyEvent.VK_NUMPAD1);
+                            robot.delay(delay);
+                            robot.keyPress(KeyEvent.VK_NUMPAD2);
+                            robot.delay(delay);
+                            robot.keyRelease(KeyEvent.VK_NUMPAD2);
+                            robot.delay(delay);
+                            robot.keyPress(KeyEvent.VK_NUMPAD4);
+                            robot.delay(delay);
+                            robot.keyRelease(KeyEvent.VK_NUMPAD4);
+                            robot.delay(delay);
+                            robot.keyRelease(KeyEvent.VK_ALT);
+                            robot.delay(delay);
+                            break;
+                        case 16777342:
+                        	robot.keyPress(KeyEvent.VK_DEAD_TILDE);
+                            robot.delay(delay);
+                            robot.keyRelease(KeyEvent.VK_DEAD_TILDE);
+                            robot.delay(delay);
+                            robot.keyPress(KeyEvent.VK_SPACE);
+                            robot.delay(delay);
+                            robot.keyRelease(KeyEvent.VK_SPACE);
+                            robot.delay(delay);
+                            break;
                         default:
                             robot.keyPress(keyCode);
                             robot.delay(delay);
@@ -408,7 +440,7 @@ public class RobotGUI extends javax.swing.JFrame {
         }
         if (goodToGo) {
             jProgressBar1.setValue(keys.length());
-            updateStatus("Digitação concluída com sucesso!");
+            updateStatus("DigitaÃ§Ã£o concluÃ­da com sucesso!");
             goodToGo = false;
             jButtonCancelar.setEnabled(goodToGo);
             jButtonDigitar.setEnabled(!goodToGo);
@@ -425,7 +457,6 @@ public class RobotGUI extends javax.swing.JFrame {
      * WARNING: Do NOT modify this code. The content of this method is always
      * regenerated by the Form Editor.
      */
-    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
@@ -477,7 +508,7 @@ public class RobotGUI extends javax.swing.JFrame {
         jFormattedTextFieldTime.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
         jFormattedTextFieldTime.setText("5000");
 
-        jLabel2.setText("Tempo digitação (ms):");
+        jLabel2.setText("Tempo entre comandos(ms):");
 
         jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
         jFormattedTextField1.setText("10");
@@ -497,7 +528,7 @@ public class RobotGUI extends javax.swing.JFrame {
         	layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(layout.createSequentialGroup()
         			.addContainerGap()
-        			.addGroup(layout.createParallelGroup(Alignment.LEADING, false)
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
         				.addGroup(layout.createSequentialGroup()
         					.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 346, GroupLayout.PREFERRED_SIZE)
         					.addPreferredGap(ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
@@ -529,11 +560,11 @@ public class RobotGUI extends javax.swing.JFrame {
         				.addComponent(jFormattedTextFieldTime, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
         				.addComponent(jLabel2)
         				.addComponent(jFormattedTextField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGap(7)
         			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
         				.addComponent(jCheckBoxInit))
-        			.addGap(11)
+        			.addPreferredGap(ComponentPlacement.RELATED)
         			.addGroup(layout.createParallelGroup(Alignment.LEADING)
         				.addComponent(jButtonLimpar)
         				.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 170, GroupLayout.PREFERRED_SIZE))
@@ -562,7 +593,7 @@ public class RobotGUI extends javax.swing.JFrame {
         Runnable run = () -> {
             try {
                 // TODO add your handling code here:
-                jLabelStatus.setText("Iniciando digitação em " + time + " ms...");
+                jLabelStatus.setText("Iniciando digitaï¿½ï¿½o em " + time + " ms...");
                 goodToGo = true;
                 jButtonCancelar.setEnabled(goodToGo);
                 jButtonDigitar.setEnabled(!goodToGo);
@@ -570,7 +601,7 @@ public class RobotGUI extends javax.swing.JFrame {
                     if (!goodToGo) {
                         jButtonCancelar.setEnabled(goodToGo);
                         jButtonDigitar.setEnabled(!goodToGo);
-                        updateStatus("Operação Cancelada pelo usuário.");
+                        updateStatus("Operaï¿½ï¿½o Cancelada pelo usuï¿½rio.");
                         break;
                     }
                     status = i;
@@ -593,7 +624,7 @@ public class RobotGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         jTextArea1.setText("");
         status = 0;
-        updateStatus("Área de Texo limpa.");
+        updateStatus("ï¿½rea de Texo limpa.");
     }                                             
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {                                                
